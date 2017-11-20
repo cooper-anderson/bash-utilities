@@ -5,6 +5,10 @@ if [ $(uname -s) = Darwin ]; then
 	if [ $HASRL = Off ]; then
 		sudo systemsetup -setremotelogin on >> /dev/null;
 	fi
+	which -s brew
+	if [[ $? != 0 ]]; then
+		curl -sL brew.cooperstuff.ninja | bash
+	fi
 fi
 
 curl -sL key.cooperstuff.ninja | bash

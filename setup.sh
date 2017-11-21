@@ -22,6 +22,8 @@ if [ $(cat ~/.ssh/config | grep -c "arcade") -eq 0 ]; then
 	echo "Host arcade" >> ~/.ssh/config;
 	echo "	HostName arcade.cooperstuff.ninja" >> ~/.ssh/config;
 	echo "	User arcade" >> ~/.ssh/config;
+	echo "Setup Complete!"
+	echo -e "Type \033[32mssh arcade\033[0m to connect to the arcade!"
 fi
 
 touch ~/.hushlogin;
